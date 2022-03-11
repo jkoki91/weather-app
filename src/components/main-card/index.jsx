@@ -8,22 +8,28 @@ import { useFetchWithCoords } from "../../custom-hook/useFetch";
 import { Container } from "react-bootstrap";
 import { useContext } from "react";
 import { CoordsContext } from "../../context/coords-context";
+import { type } from "@testing-library/user-event/dist/type";
 
 function CurrentCard() {
-    const [city, setCity, latitude, setLatitude, longitude, setLongitude,data, setData] = useContext(CoordsContext);
-    // useFetchWithCoords()
+    // const [city, setCity, latitude, setLatitude, longitude, setLongitudes] = useContext(CoordsContext);
+    
+    let data = useFetchWithCoords();
 
-    // let resume = data.current.weather[0].description
-    let clouds = data.current
-    // let temp = data.current.temp
+    // let resume = data.current.weather[0]
+    let clouds = data.current.clouds
+    let temp = data.current.temp
     // let humidity =data.current.humidity
     // let tempFeel= data.current.feels_like
     // let UV = data.current.uvi
     // let speed= data.current.wind_speed
+    // console.log(typeof clouds)
     console.log(clouds)
+    console.log(temp)
     console.log(data)
 
     return (
+        <>
+         {data===null?'cargando':
         <React.Fragment>
             <Row xs={1} md={2} className="g-4">
                 <Col md={12} xxl={6} >
@@ -63,8 +69,9 @@ function CurrentCard() {
                     </Card>
                 </Col>
             </Row>
-        </React.Fragment>
-    )
+        </React.Fragment>}</>
+       
+        )
 }
 
 export default CurrentCard;
