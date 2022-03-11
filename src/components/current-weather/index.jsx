@@ -1,6 +1,4 @@
-import { coordsCity } from "../fecth";
 import React from "react";
-import { useEffect, useState } from "react";
 import { useFetchWithCoords, useFetchWithCity } from "../../custom-hook/useFetch";
 
 function CurrentWeather() {

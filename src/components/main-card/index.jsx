@@ -1,21 +1,27 @@
 import React from "react";
 import WeatherIcon from '../weather-icon'
 import './style.css'
-import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container'
 import Card from "react-bootstrap/Card";
 import { useFetchWithCoords } from "../../custom-hook/useFetch";
+import { Container } from "react-bootstrap";
+import { useContext } from "react";
+import { CoordsContext } from "../../context/coords-context";
 
 function CurrentCard() {
-    let WheatherInfo = useFetchWithCoords()
-    let icon
-    let temp
-    let humidity
-    let tempFeel
-    let wind
-    let UV
+    const [city, setCity, latitude, setLatitude, longitude, setLongitude,data, setData] = useContext(CoordsContext);
+    // useFetchWithCoords()
+
+    // let resume = data.current.weather[0].description
+    let clouds = data.current
+    // let temp = data.current.temp
+    // let humidity =data.current.humidity
+    // let tempFeel= data.current.feels_like
+    // let UV = data.current.uvi
+    // let speed= data.current.wind_speed
+    console.log(clouds)
+    console.log(data)
 
     return (
         <React.Fragment>
@@ -25,7 +31,7 @@ function CurrentCard() {
                         <Col md={4} xxl={4}>
                             <Card.Body>
                                 <WeatherIcon type='sunny'></WeatherIcon>
-                                <h3>15º</h3>
+                                <h1>15º</h1>
                                 <img src=''></img>
                                 <h6>10º</h6>
                                 <p>Sensación</p>
@@ -34,7 +40,7 @@ function CurrentCard() {
                         <Col md={8} xxl={8}>
                             <Card.Body>
                                 <Card.Title>Ciudad</Card.Title>
-                                <Card.Text>
+                                <Container>
                                     <p>Parcialmente nublado</p>
                                     <div className="card__info">
                                         <link rel="icon" ></link>
@@ -51,7 +57,7 @@ function CurrentCard() {
                                         <p>indice UV</p>
                                         <p>poco</p>
                                     </div>
-                                </Card.Text>
+                                </Container>
                             </Card.Body>
                         </Col>
                     </Card>

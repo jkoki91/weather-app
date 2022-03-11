@@ -1,7 +1,15 @@
+@font-face {
+    
+    font-family:'Circular' ;
+    src: url(../../assets/fonts/CircularSpUIv3T-Book.ttf);
+}
+
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Circular';
     box-sizing: border-box;
+    
 }
 
 .card__container{
@@ -11,6 +19,7 @@
     border: none;
     background-color: #F2F2F2;
     justify-content: space-around;
+    color: #7198A9;
 }
 
 .card__info{

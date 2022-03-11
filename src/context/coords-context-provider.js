@@ -5,10 +5,11 @@ function CoordsContextProvider({ children }) {
     const [city, setCity] = useState('Madrid');
     const [latitude, setLatitude] = useState('');
     const [longitude, setLongitude] = useState('');
+    const [data, setData] = useState([]);
 
 
     return (
-        <CoordsContext.Provider value={[city, setCity, latitude, setLatitude, longitude, setLongitude]}>
+        <CoordsContext.Provider value={[city, setCity, latitude, setLatitude, longitude, setLongitude,data, setData]}>
             {children}
         </CoordsContext.Provider>
     )
