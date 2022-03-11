@@ -19,12 +19,12 @@ export const useFetchWithCity = (api) => {
 }
 
 export const useFetchWithCoords = (api) => {
-    const API_KEY = '';
+    const API_KEY = '1f7689b2591acb5efd5d91b7e124bf44';
     const docApiPrevision = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly&appid=${API_KEY}`
     const [city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
 
     console.log('hi');
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${40.416775}&lon=${-3.703790}&units=metric&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${25}&lon=${55}&units=metric&appid=${API_KEY}`)
         .then(res => res.json())
         .then(data => console.log(data))
 }
