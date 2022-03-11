@@ -19,7 +19,7 @@ export const useFetchWithCity = (api) => {
 }
 
 export const useFetchWithCoords = (api) => {
-    const [city, setCity, latitude, setLatitude, longitude, setLongitude,data, setData] = useContext(CoordsContext);
+    const [data, setData] = useState(null);
     const API_KEY = '1f7689b2591acb5efd5d91b7e124bf44';
     const docApiPrevision = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly&appid=${API_KEY}`
     useEffect(()=>{
@@ -30,6 +30,6 @@ export const useFetchWithCoords = (api) => {
             // console.log(data)
         }) 
     },[])
-    
+    return data;
     
 }
