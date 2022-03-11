@@ -1,0 +1,40 @@
+@font-face {
+    
+    font-family:'Circular' ;
+    src: url(../../assets/fonts/CircularSpUIv3T-Book.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Circular';
+    box-sizing: border-box;
+    
+}
+
+.card__container{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    background-color: #F2F2F2;
+    justify-content: space-around;
+    color: #7198A9;
+}
+
+.card__info{
+    display: flex;
+    flex-direction: row;
+}
+
+.icon__img{
+    color: aqua;
+}
+
+.prueba{
+    fill: red;
+}
+
+svg{
+    color: red;
+}
