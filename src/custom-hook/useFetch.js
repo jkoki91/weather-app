@@ -22,7 +22,7 @@ export const useFetchWithCoords = (api) => {
     const [data, setData] = useState(null);
     const docApiPrevision = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly&appid=${apiKey}`
     useEffect(()=>{
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${64}&lon=${150}&units=metric&lang=es&appid=${apiKey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${40}&lon=${-3}&units=metric&lang=es&appid=${apiKey}`)
         .then(res => res.json())
         .then(data =>{
             setData(data)
