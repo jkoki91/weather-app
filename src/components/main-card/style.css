@@ -18,23 +18,39 @@
     flex-direction: row;
     border: none;
     background-color: #F2F2F2;
-    justify-content: space-around;
+    justify-content: left;
     color: #7198A9;
+    border-bottom: solid;
+    border-color: #868E96;
+    border-width: 1px;
+    border-radius: 0px;
+}
+
+.first__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.card__title{
+    margin-left: 10%;
+    color: #333333;
+}
+.card__description{
+    margin-left: 5%;
+    color: #333333;
 }
 
 .card__info{
     display: flex;
     flex-direction: row;
+    color: #333333;
 }
-
-.icon__img{
-    color: aqua;
+.card__info > p {
+    margin-left: 10px;
 }
-
-.prueba{
-    fill: red;
-}
-
-svg{
-    color: red;
+.weather__icon{
+    width: 71px;
+    height: 61px;
 }
