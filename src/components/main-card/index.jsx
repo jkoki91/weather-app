@@ -16,15 +16,13 @@ function CurrentCard() {
     let data = useFetchWithCoords();
 
     // let resume = data.current.weather[0]
-    let clouds = data.current.clouds
-    let temp = data.current.temp
+    
     // let humidity =data.current.humidity
     // let tempFeel= data.current.feels_like
     // let UV = data.current.uvi
     // let speed= data.current.wind_speed
     // console.log(typeof clouds)
-    console.log(clouds)
-    console.log(temp)
+ 
     console.log(data)
 
     return (
@@ -40,7 +38,7 @@ function CurrentCard() {
                                 <h1>15º</h1>
                                 <img src=''></img>
                                 <h6>10º</h6>
-                                <p>Sensación</p>
+                                <p>{data.current.feels_like}</p>
                             </Card.Body>
                         </Col>
                         <Col md={8} xxl={8}>

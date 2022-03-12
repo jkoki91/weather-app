@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import { CoordsContext } from "../context/coords-context";
+import { apiKey } from "../key/key";
 
 export const useFetchWithCity = (api) => {
     const [city, setCity, latitude, setLatitude, longitude, setLongitude,data, setData] = useContext(CoordsContext);
-    const API_KEY = '';
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},&limit=2&appid=${API_KEY}`)
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},&limit=2&appid=${apiKey}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -20,10 +20,9 @@ export const useFetchWithCity = (api) => {
 
 export const useFetchWithCoords = (api) => {
     const [data, setData] = useState(null);
-    const API_KEY = '1f7689b2591acb5efd5d91b7e124bf44';
-    const docApiPrevision = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly&appid=${API_KEY}`
+    const docApiPrevision = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly&appid=${apiKey}`
     useEffect(()=>{
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${64}&lon=${150}&units=metric&lang=es&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${64}&lon=${150}&units=metric&lang=es&appid=${apiKey}`)
         .then(res => res.json())
         .then(data =>{
             setData(data)
