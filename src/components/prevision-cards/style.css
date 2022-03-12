@@ -1,0 +1,48 @@
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.prev-card__container {
+    width: 517px;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    color: #666666;
+    border-top: 1px solid #868E96;
+    padding: 2rem;
+}
+
+.prev-card__date {
+    font-size: 16px;
+}
+
+.prev-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.prev-card__temp-rain {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    align-content: center;
+}
+
+.prev-info {
+    display: flex;
+    flex-direction: row;
+    gap: .2rem;
+    
+
+}
+
+.prev-card_temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}

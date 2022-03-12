@@ -1,12 +1,13 @@
 import { CoordsContext } from "./coords-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function CoordsContextProvider({ children }) {
     const [city, setCity] = useState('Madrid');
-    const [latitude, setLatitude] = useState('');
-    const [longitude, setLongitude] = useState('');
+    let [latitude, setLatitude] = useState('');
+    let [longitude, setLongitude] = useState('');
     // const [data, setData] = useState([]);
-
+   
+   
 
     return (
         <CoordsContext.Provider value={[city, setCity, latitude, setLatitude, longitude, setLongitude]}>

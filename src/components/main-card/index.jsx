@@ -9,12 +9,14 @@ import { Container } from "react-bootstrap";
 import { useContext } from "react";
 import { CoordsContext } from "../../context/coords-context";
 import { type } from "@testing-library/user-event/dist/type";
+import { useGeolocation } from "../../custom-hook/useGeolocation";
 
 function CurrentCard() {
     // const [city, setCity, latitude, setLatitude, longitude, setLongitudes] = useContext(CoordsContext);
     
     let data = useFetchWithCoords();
-
+    
+    console.log(useGeolocation());
     // let resume = data.current.weather[0]
     
     // let humidity =data.current.humidity
@@ -23,7 +25,7 @@ function CurrentCard() {
     // let speed= data.current.wind_speed
     // console.log(typeof clouds)
  
-    console.log(data)
+
 
     return (
         <>
