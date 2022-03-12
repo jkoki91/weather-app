@@ -4,22 +4,23 @@ import './style.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Card from "react-bootstrap/Card";
-import { useFetchWithCoords } from "../../custom-hook/useFetch";
+import { useFetchWithCoords, useFetchWithCity } from "../../custom-hook/useFetch";
 import { Container } from "react-bootstrap";
 import { useContext } from "react";
 import { CoordsContext } from "../../context/coords-context";
 import { type } from "@testing-library/user-event/dist/type";
 import { useGeolocation } from "../../custom-hook/useGeolocation";
 
+
 function CurrentCard() {
     // const [city, setCity, latitude, setLatitude, longitude, setLongitudes] = useContext(CoordsContext);
-   
+    let coords = useFetchWithCity()
     let data = useFetchWithCoords();
     console.log(data);
-    
+    console.log(coords)
     return (
         <>
-            {data === null ? 'cargando' :
+            {data === null || undefined ? 'cargando' :
                 <React.Fragment>
                     <Row xs={1} md={2} className="g-4">
                         <Col md={12} xxl={6} >
