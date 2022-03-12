@@ -12,7 +12,7 @@ import CurrentCard from './components/main-card';
 import Header from './components/header';
 
 function App() {
-  {useGeolocation()}
+
   return (
     <div className="App">
       <TemperatureProvider>

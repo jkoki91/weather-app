@@ -8,7 +8,7 @@ export default function PrevisionCards() {
   return (
     <section className="prev-card__container">
       <div className="prev-card__weather-icon">
-        <WeatherIcon className="prev-card__wi" type="sunny"></WeatherIcon>
+        <WeatherIcon className="prev-card__wi" type="01d"></WeatherIcon>
       </div>
 
       <div className="prev-card__info">

@@ -13,10 +13,10 @@ import { useGeolocation } from "../../custom-hook/useGeolocation";
 
 function CurrentCard() {
     // const [city, setCity, latitude, setLatitude, longitude, setLongitudes] = useContext(CoordsContext);
-
+   
     let data = useFetchWithCoords();
+    console.log(data);
     
-    console.log(useGeolocation());
     // let resume = data.current.weather[0]
 
     // let humidity =data.current.humidity
@@ -46,7 +46,7 @@ function CurrentCard() {
                                 </Col>
                                 <Col md={6} xxl={6}>
                                     <Card.Body>
-                                        <Card.Title className="card__title"><h1>Ciudad</h1></Card.Title>
+                                        <Card.Title className="card__title"><h1>{data.timezone}</h1></Card.Title>
                                         <Container>
                                             <p className="card__description">{data.current.weather[0].description}</p>
                                             <div className="card__info">
