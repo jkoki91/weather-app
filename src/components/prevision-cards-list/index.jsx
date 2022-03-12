@@ -15,7 +15,7 @@ export default function PrevisionCardsList() {
         '5': 'Friday',
         '6': 'Saturday'
     }
-    
+
     const daily = data.daily;
     
     const printPrevisionCards = daily.map((day, i) => {
@@ -24,9 +24,7 @@ export default function PrevisionCardsList() {
         const weekDay = new Date(timestamp).getDay().toString();
    
         if (i >= 1) {
-            return (
-                <PrevisionCards weekday={dict[weekDay]} day={previsionDay} degrees={Math.round(day.temp.day)} rain={day.humidity}></PrevisionCards>
-            )
+            return <PrevisionCards weekday={dict[weekDay]} day={previsionDay} degrees={Math.round(day.temp.day)} rain={day.humidity}></PrevisionCards>
         }
     })
     return(
