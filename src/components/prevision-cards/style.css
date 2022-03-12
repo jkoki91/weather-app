@@ -12,7 +12,9 @@ p {
     align-items: center;
     color: #666666;
     border-top: 1px solid #868E96;
-    padding: 2rem;
+    padding: 1.6rem;
+
+
 }
 
 .prev-card__date {
