@@ -4,8 +4,7 @@ import './index.css'
 import React from 'react';
 import CoordsContextProvider from './context/coords-context-provider';
 import TemperatureProvider from './context/temperature-provider';
-import PrevisionCards from './components/prevision-cards';
-import { useGeolocation } from './custom-hook/useGeolocation';
+import PrevisionCardsList from './components/prevision-cards-list';
 
 import CurrentCard from './components/main-card';
 
@@ -20,7 +19,7 @@ function App() {
           <Header></Header>
           
           <CurrentCard></CurrentCard>
-          <PrevisionCards></PrevisionCards>
+          <PrevisionCardsList></PrevisionCardsList>
         </CoordsContextProvider>
       </TemperatureProvider>
     </div>

@@ -1,0 +1,5 @@
+.prev-cards__scroll-container {
+    overflow: auto;
+    height: 800px;
+
+}
