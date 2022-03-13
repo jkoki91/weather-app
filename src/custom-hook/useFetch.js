@@ -48,17 +48,14 @@ import { apiKey } from "../key/key";
 
 
 export const getFetchWithCity = async (citySearch) => {
-    let key = apiKey;
-        const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${key}`)
+        const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&lang=es&appid=${apiKey}`)
         const d = await r.json()
+        console.log('ddd', d)
     return d
 }
 
 export const getFetchWithCoords = async (lat, lon, unit) => {
-
-    let key = apiKey;
-
-    const r = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${unit}&lang=es&appid=${key}`)
+    const r = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${unit}&lang=es&appid=${apiKey}`)
     const d = await r.json()
     return d
 }
