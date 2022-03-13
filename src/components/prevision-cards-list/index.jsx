@@ -56,16 +56,7 @@ export default function PrevisionCardsList() {
     const month = months[date.getMonth()];
 
     if (i >= 1) {
-      return (
-        <PrevisionCards key={i}
-          cardClick={handleCardClick}
-          weekday={weekDays[weekDay]}
-          day={previsionDay}
-          month={month}
-          degrees={Math.round(day.temp.day)}
-          rain={day.humidity}
-        ></PrevisionCards>
-      );
+     return <PrevisionCards weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity} type={day.weather[0].icon}></PrevisionCards>
     }
   });
 
@@ -75,3 +66,4 @@ export default function PrevisionCardsList() {
     </>
   );
 }
+

@@ -7,14 +7,15 @@ import rainIcon from '../../assets/weather-icons/rain.svg';
 import { TemperatureContext } from "../../context/temperature-context";
 
 
-export default function PrevisionCards({weekday, day, month, degrees, rain, cardClick}) {
-  const [currentTemp, setCurrentTemp] = useContext(TemperatureContext)
- 
 
+export default function PrevisionCards({weekday, day, month, degrees, rain, type}) {
+  const [currentTemp, setCurrentTemp] = useContext(TemperatureContext)
+  console.log('icono', type)
   return (
     <article onClick={cardClick} className="prev-card__container">
       <div className="prev-card__weather-icon">
-        <WeatherIcon className="prev-card__wi" type="01d"></WeatherIcon>
+        <WeatherIcon className="prev-card__wi" type={type} color='#666666' width="52" height="42"></WeatherIcon>
+        
       </div>
 
       <div className="prev-card__info">
