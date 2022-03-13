@@ -11,7 +11,7 @@ export const useGeolocation = () => {
          const crd = pos.coords;
            setLatitude(crd.latitude);
            setLongitude(crd.longitude);
-            console.log(latitude, longitude)
+         
           };
         navigator.geolocation.getCurrentPosition(success)
     }, [])

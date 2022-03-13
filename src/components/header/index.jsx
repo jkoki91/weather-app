@@ -1,6 +1,7 @@
 import './style.css'
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav, Container } from 'react-bootstrap';
+import avatar from '../../assets/avatar.png'
 
 
 export default function Header() {
@@ -12,6 +13,7 @@ export default function Header() {
                     <Nav.Link>Inicio</Nav.Link>
                     <Nav.Link>Nueva prenda</Nav.Link>
                     <Nav.Link>Mi amario</Nav.Link>
+                    <img className="avatar" src={avatar}></img>
                 </Nav>
             </Container>
         </Navbar>
