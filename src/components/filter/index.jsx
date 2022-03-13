@@ -16,6 +16,7 @@ import { TemperatureContext } from "../../context/temperature-context";
 import "./style.css";
 
 function Filter() {
+
   const [
     data,
     setData,
@@ -64,6 +65,7 @@ function Filter() {
       {/* </Col> */}
     </Row>
   );
+
 }
 
 export default Filter;

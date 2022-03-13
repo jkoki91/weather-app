@@ -1,12 +1,22 @@
 import logoStylish from '../../assets/logo/stylish-logo.png';
 import './style.css'
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function LogoBrand() {
     
     return (
-        <div className="logo-container">
-              <img alt="logo" className="logo" src={logoStylish}></img>
-        </div>
+
+        <Container>
+        <Row>
+          <Col md={6}>
+          <img alt="logo" className="logo" src={logoStylish}></img>
+          </Col>
+         
+        </Row>
+        </Container>
+       
+              
+      
       
     )
 }

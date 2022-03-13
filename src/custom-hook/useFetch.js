@@ -50,7 +50,6 @@ import { apiKey } from "../key/key";
 export const getFetchWithCity = async (citySearch) => {
         const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&lang=es&appid=${apiKey}`)
         const d = await r.json()
-        console.log('ddd', d)
     return d
 }
 
