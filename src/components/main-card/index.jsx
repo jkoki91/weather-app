@@ -21,21 +21,16 @@ function CurrentCard() {
     useGeolocation();
     
     const getTimeDescription = () =>{
-        let description
-        data.current ?  description = data.daily[0].weather[0].description : description = data.weather[0].description;
+        const description = data.daily[0].weather[0].description
         const parsedDescription = description.charAt(0).toUpperCase() + description.slice(1);
         return parsedDescription
     }
 
     useEffect(()=>{
-        console.log('getfetchcity', city);
         getFetchWithCity(city).then(c => {
-            
             setLatitude(c.coord.lat)
             setLongitude(c.coord.lon)
-            console.log(longitude,latitude)
             setCurrentCity(c.name)
-            
         })
     },[city])
     
