@@ -17,7 +17,7 @@ import PrevisionCardsList from "../prevision-cards-list";
 
 function CurrentCard() {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude, currentCity, setCurrentCity, counter, setCounter] = useContext(CoordsContext);
-    const [currentTemp, setCurrentTemp, units, setUnits] = useContext(TemperatureContext);
+    const [currentTemp, setCurrentTemp, units, setUnits, temp, setTemp] = useContext(TemperatureContext);
     useGeolocation();
     
     const getTimeDescription = () =>{
@@ -35,6 +35,7 @@ function CurrentCard() {
             setLongitude(c.coord.lon)
             console.log(longitude,latitude)
             setCurrentCity(c.name)
+            
         })
     },[city])
     
@@ -44,6 +45,7 @@ function CurrentCard() {
             getFetchWithCoords(latitude, longitude, units).then(c => {
                 console.log(c)
                 setData(c)
+                setTemp(c.daily[0].temp.day)
             })
         }
     },[latitude, units])

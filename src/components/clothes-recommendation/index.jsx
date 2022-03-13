@@ -8,14 +8,14 @@ import Button from "react-bootstrap/Button";
 import { TemperatureContext } from "../../context/temperature-context";
 
 function importAll(r) {
-  let images = {};
+  let clothes = {};
   r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
+    clothes[item.replace("./", "")] = r(item);
   });
-  return images;
+  return clothes;
 }
 
-const images = importAll(
+const clothes = importAll(
   require.context("../../assets/clothes", false, /\.(png|jpe?g|svg)$/)
 );
 
@@ -37,13 +37,14 @@ export default function ClothesRecommendation() {
     useContext(TemperatureContext);
 
   const [outfitStyle, setOufitStyle] = useState("casual");
-  const keys = Object.keys(images);
+  const keys = Object.keys(clothes);
   const formalOutfits = [];
   const informalOutfits = [];
-  const lowTemperatureOutfits = [];
-  const highTemperatureOutfits = [];
-  const rainOutfits = [];
-
+  const lowTemperatureOutfits = [[], []];
+  const highTemperatureOutfits = [[], []];
+  const rainOutfits = [[], []];
+  console.log(temp);
+  let weatherTemp = units === 'metric' ? temp : (temp -32 ) * 5/9
   const handleClickCasual = () => setOufitStyle("casual");
 
   const handleClickFormal = () => setOufitStyle("formal");
@@ -52,10 +53,19 @@ export default function ClothesRecommendation() {
     if (outfit.includes("informal")) informalOutfits.push(outfit);
     else formalOutfits.push(outfit);
 
-    if (outfit.includes("10-10")) lowTemperatureOutfits.push(outfit);
-    if (outfit.includes("16-40")) highTemperatureOutfits.push(outfit);
-    if (outfit.includes("lluvia")) rainOutfits.push(outfit);
+    if (outfit.includes("10-10") && outfit.includes("informal")) lowTemperatureOutfits[0].push(outfit);
+    if (outfit.includes("10-10") && outfit.includes("-formal")) lowTemperatureOutfits[1].push(outfit);
+
+    if (outfit.includes("16-40") && outfit.includes("informal")) highTemperatureOutfits[0].push(outfit);
+    if (outfit.includes("16-40") && outfit.includes("-formal")) highTemperatureOutfits[1].push(outfit);
+
+    if (outfit.includes("lluvia") && outfit.includes("informal")) rainOutfits[0].push(outfit)
+    if (outfit.includes("lluvia") && outfit.includes("-formal")) rainOutfits[1].push(outfit)
   });
+
+  console.log('rain weather outfits', rainOutfits);
+  console.log('low temperature outfits', lowTemperatureOutfits);
+  console.log('high temperature outfits', highTemperatureOutfits);
 
   const randomPick = (outfitArray) => {
     const randomIndex = Math.floor(Math.random() * outfitArray.length);
@@ -63,14 +73,14 @@ export default function ClothesRecommendation() {
   };
 
   const selectOutfitByStyle = () => {
+    let num = outfitStyle === 'casual' ? 0 : 1;
     const description = data.daily[0].weather[0].description;
     const isRainning = description.toLowerCase().includes("lluvia");
-
-    if (temp < 10) return images[randomPick(lowTemperatureOutfits)];
-    if (temp > 30) return images[randomPick(highTemperatureOutfits)];
-    if (isRainning) return images[randomPick(rainOutfits)];
-    if (outfitStyle === "casual") return images[randomPick(informalOutfits)];
-    else return images[randomPick(formalOutfits)];
+    if (temp < 5) return clothes[randomPick(lowTemperatureOutfits[num])];
+    if (temp > 35) return clothes[randomPick(highTemperatureOutfits[num])];
+    if (isRainning) return clothes[randomPick(rainOutfits[num])];
+    if (outfitStyle === "casual") return clothes[randomPick(informalOutfits[num])];
+    if (outfitStyle === "formal") return clothes[randomPick(formalOutfits[num])];
   };
 
   console.log(highTemperatureOutfits);

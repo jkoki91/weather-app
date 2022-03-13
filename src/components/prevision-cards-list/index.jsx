@@ -52,8 +52,6 @@ export default function PrevisionCardsList() {
   
   };
   
-
-
   const printPrevisionCards = daily.map((day, i) => {
     const timestamp = day.dt * 1000;
     const date = new Date();

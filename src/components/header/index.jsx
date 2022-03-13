@@ -13,7 +13,7 @@ export default function Header() {
                     <Nav.Link>Inicio</Nav.Link>
                     <Nav.Link>Nueva prenda</Nav.Link>
                     <Nav.Link>Mi amario</Nav.Link>
-                    <img className="avatar" src={avatar}></img>
+                    
                 </Nav>
             </Container>
         </Navbar>
