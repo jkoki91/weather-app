@@ -49,7 +49,7 @@ function Filter() {
     return (
         <Row xs={1} md={1} className="g-4">
             {/* <Col md={12}> */}
-            <Form className="d-flex flex-row" onSubmit={handler}>
+            <Form className="d-flex flex-row-reverse" onSubmit={handler}>
                 <form onSubmit={handleClickButton} className='form__button'>
                     <button className="button__ubication">
                         <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
