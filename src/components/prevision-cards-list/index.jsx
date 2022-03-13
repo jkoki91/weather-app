@@ -27,9 +27,9 @@ export default function PrevisionCardsList() {
         const previsionDay = new Date(timestamp).getDate();
         const weekDay = new Date(timestamp).getDay().toString();
         const month = months[date.getMonth()]
-   
+        
         if (i >= 1) {
-            return <PrevisionCards weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity}></PrevisionCards>
+            return <PrevisionCards weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity} type={day.weather[0].icon}></PrevisionCards>
         }
     })
     return(
