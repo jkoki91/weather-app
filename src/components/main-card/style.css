@@ -30,13 +30,18 @@
     align-items: center;
     gap: 5px;
 }
-.card__text_info{
-    margin: 12 px;
-    gap: 5px;
+.info-ret{
+    margin-top: 12px;
+    margin-left: 4px;
 }
-/* .card__text_info > *{
-    margin-top: 20 px;
-} */
+
+.city__title{
+    margin-top: 10px;
+}
+
+.uvi{
+    width: 100px;
+}
 
 .card__title{
     margin-left: 10%;
