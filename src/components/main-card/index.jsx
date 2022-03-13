@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WeatherIcon from '../weather-icon'
 import './style.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Card from "react-bootstrap/Card";
 import { useFetchWithCoords, useFetchWithCity } from "../../custom-hook/useFetch";
+import { getFetchWithCoords, getFetchWithCity } from "../../custom-hook/useFetch";
 import { Container } from "react-bootstrap";
 import { useContext } from "react";
 import { CoordsContext } from "../../context/coords-context";
@@ -14,19 +15,33 @@ import { TemperatureContext } from "../../context/temperature-context";
 
 
 function CurrentCard() {
-    // const [city, setCity, latitude, setLatitude, longitude, setLongitudes] = useContext(CoordsContext);
-
-    let coords = useFetchWithCity()
-    const [currentTemp, setCurrentTemp] = useContext(TemperatureContext);
-    let data = useFetchWithCoords();
+    const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
+    const [currentTemp, setCurrentTemp, units, setUnits] = useContext(TemperatureContext);
+    
+    useEffect(()=>{
+        getFetchWithCity(city).then(c => {
+        
+            setLatitude(c.coord.lat)
+            setLongitude(c.coord.lon)
+            console.log(longitude,latitude)
+        })
+    },[city])
+    
+    useEffect(()=>{
+        getFetchWithCoords(latitude,longitude,units).then(c=>{
+            console.log(c)
+            setData(c)
+            
+        })
+    },[latitude,longitude,city])
+    
     console.log(data);
-    console.log(coords)
     return (
         <>
             {data === null || undefined ? 'cargando' :
                 <React.Fragment>
                     <Row xs={1} md={2} className="g-4">
-                        <Col md={24} xxl={12} >
+                        {/* <Col md={24} xxl={12} > */}
                             <Card className="card__container">
                                 <Col md={6} xxl={6}>
                                     <Card.Body className="first__info">
@@ -41,7 +56,7 @@ function CurrentCard() {
                                 </Col>
                                 <Col md={12} xxl={12}>
                                     <Card.Body>
-                                        <Card.Title className="card__title"><h1>{data.timezone}</h1></Card.Title>
+                                        <Card.Title className="card__title"><h2>{data.timezone}</h2></Card.Title>
                                         <Container>
                                             <p className="card__description">{data.current.weather[0].description}</p>
                                             <div className="card__info">
@@ -71,7 +86,7 @@ function CurrentCard() {
                                     </Card.Body>
                                 </Col>
                             </Card>
-                        </Col>
+                        {/* </Col> */}
                     </Row>
                 </React.Fragment>}</>
 

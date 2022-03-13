@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 function CoordsContextProvider({ children }) {
     const [data, setData] = useState(null);
-    const [city, setCity] = useState('Madrid');
+    let [city, setCity] = useState('Madrid');
     let [latitude, setLatitude] = useState('40');
     let [longitude, setLongitude] = useState('-3');
     
