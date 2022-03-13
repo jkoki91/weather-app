@@ -12,23 +12,17 @@ import { TemperatureContext } from "../../context/temperature-context";
 function Filter() {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
     const [currentTemp, setCurrentTemp, units, setUnits] = useContext(TemperatureContext);
+
     const handler = e => {
         e.preventDefault()
-        setCity(e.target.value)
-        console.log(city)
-        getFetchWithCity(city).then(c => {
-            
-            setLatitude(c.coord.lat)
-            setLongitude(c.coord.lon)
-            console.log(longitude,latitude)
-        })
-        // getFetchWithCity(e.target.buscador.value)
-        getFetchWithCoords(latitude,longitude,units).then(c=>{
-            console.log(c)
-            setData(c)
-            
-        })
-        
+        console.log(e.target.buscador.value); //sevilla
+        setCity(e.target.buscador.value)
+
+        // getFetchWithCity(city).then(c => {
+        //     setLatitude(c.coord.lat)
+        //     setLongitude(c.coord.lon)
+        //     console.log(longitude, latitude)
+        // })
     }
     
     return (

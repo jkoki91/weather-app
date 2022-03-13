@@ -8,19 +8,13 @@ export const useGeolocation = () => {
   
     useEffect(() => {
         function success(pos) {
-            const crd = pos.coords;
-            // console.log(pos)
-            // console.log('Your current position is:');
-            // console.log('Latitude : ' + crd.latitude);
-            // console.log('Longitude: ' + crd.longitude);
-            // console.log('More or less ' + crd.accuracy + ' meters.');
-    
+         const crd = pos.coords;
            setLatitude(crd.latitude);
            setLongitude(crd.longitude);
+            console.log(latitude, longitude)
           };
         navigator.geolocation.getCurrentPosition(success)
-    
-        
     }, [])
+    
     
 }

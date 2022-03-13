@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 function CoordsContextProvider({ children }) {
     const [data, setData] = useState(null);
     let [city, setCity] = useState('Madrid');
-    let [latitude, setLatitude] = useState('40');
-    let [longitude, setLongitude] = useState('-3');
-    
-   
+    let [latitude, setLatitude] = useState(null);
+    let [longitude, setLongitude] = useState(null);
    
 
     return (
