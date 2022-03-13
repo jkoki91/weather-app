@@ -6,7 +6,7 @@ import './style.css'
 export default function PrevisionCardsList() {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
 
-    const dict = {
+    const weekDays = {
         '0': 'Sunday',
         '1': 'Monday',
         '2': 'Tuesday',
@@ -16,20 +16,25 @@ export default function PrevisionCardsList() {
         '6': 'Saturday'
     }
 
+    const months = ['January','February','March','April','May','June','July','August', 'September', 'October','November','December'];
+
     const daily = data.daily;
+    console.log('daily', daily);
     
     const printPrevisionCards = daily.map((day, i) => {
         const timestamp = day.dt*1000;
+        const date = new Date();
         const previsionDay = new Date(timestamp).getDate();
         const weekDay = new Date(timestamp).getDay().toString();
+        const month = months[date.getMonth()]
    
         if (i >= 1) {
-            return <PrevisionCards weekday={dict[weekDay]} day={previsionDay} degrees={Math.round(day.temp.day)} rain={day.humidity}></PrevisionCards>
+            return <PrevisionCards weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity}></PrevisionCards>
         }
     })
     return(
         <section className="prev-cards__scroll-container">
-            {data === null ? 'cargando' : printPrevisionCards}
+            {(daily === null || daily === undefined) ? 'cargando' : printPrevisionCards}
         </section>
     )
 }

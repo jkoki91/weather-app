@@ -7,7 +7,7 @@ import rainIcon from '../../assets/weather-icons/rain.svg';
 import { TemperatureContext } from "../../context/temperature-context";
 
 
-export default function PrevisionCards({weekday, day, degrees, rain}) {
+export default function PrevisionCards({weekday, day, month, degrees, rain}) {
   const [currentTemp, setCurrentTemp] = useContext(TemperatureContext)
 
   return (
@@ -18,7 +18,7 @@ export default function PrevisionCards({weekday, day, degrees, rain}) {
 
       <div className="prev-card__info">
         <div>
-          <h3 className="prev-card__date">{weekday}, {day} March</h3>
+          <h3 className="prev-card__date">{weekday}, {day} {month}</h3>
         </div>
         <div className="prev-card__temp-rain">
           <div className="prev-card_temp prev-info">
