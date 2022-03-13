@@ -24,17 +24,12 @@ function App() {
           
           <Header></Header>
           <LogoBrand></LogoBrand>
-  
-          
-          
           <Container>
             <Row>
               <Col md={6}>
                 <SwitchDegrees></SwitchDegrees>
                 <Filter></Filter>
                 <CurrentCard></CurrentCard>
-               
-                {/* <PrevisionCardsList></PrevisionCardsList> */}
               </Col>
               <Col md={6}>
                 <ClothesRecommendation></ClothesRecommendation>
