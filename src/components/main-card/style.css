@@ -15,11 +15,13 @@
 .card__container{
     margin: 20px;
     display: flex;
+    width: fit-content;
     flex-direction: row;
     border: none;
     background-color: #F2F2F2;
     justify-content: left;
     color: #7198A9;
+    
 }
 
 .first__info{
@@ -28,6 +30,13 @@
     align-items: center;
     gap: 5px;
 }
+.card__text_info{
+    margin: 12 px;
+    gap: 5px;
+}
+/* .card__text_info > *{
+    margin-top: 20 px;
+} */
 
 .card__title{
     margin-left: 10%;
