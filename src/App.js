@@ -1,4 +1,3 @@
-
 import "./App.css";
 import "./index.css";
 import React, { useContext } from "react";
@@ -12,8 +11,7 @@ import LogoBrand from "./components/logo-brand";
 import { CoordsContext } from "./context/coords-context";
 import Header from "./components/header";
 import SwitchDegrees from "./components/switch-degrees";
-import Filter from './components/filter';
-
+import Filter from "./components/filter";
 
 
 function App() {
@@ -24,14 +22,14 @@ function App() {
         <CoordsContextProvider>
           <Header></Header>
           <LogoBrand></LogoBrand>
-          <Filter></Filter>
-          <CurrentCard></CurrentCard>
-          <PrevisionCards></PrevisionCards>
-    
-          <SwitchDegrees></SwitchDegrees>
+  
+          
+          
           <Container>
             <Row>
               <Col md={6}>
+                <SwitchDegrees></SwitchDegrees>
+                <Filter></Filter>
                 <CurrentCard></CurrentCard>
                 <PrevisionCardsList></PrevisionCardsList>
               </Col>
@@ -40,7 +38,6 @@ function App() {
               </Col>
             </Row>
           </Container>
-
         </CoordsContextProvider>
       </TemperatureProvider>
     </div>

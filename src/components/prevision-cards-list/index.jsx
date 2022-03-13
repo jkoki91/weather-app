@@ -30,7 +30,6 @@ export default function PrevisionCardsList() {
     return(
         <section className="prev-cards__scroll-container">
             {data === null ? 'cargando' : printPrevisionCards}
-            
         </section>
     )
 }
