@@ -14,16 +14,15 @@ import SwitchDegrees from "./components/switch-degrees";
 import Filter from "./components/filter";
 import { useGeolocation } from "./custom-hook/useGeolocation";
 
-
 function App() {
-  
   return (
     <div className="App">
       <TemperatureProvider>
         <CoordsContextProvider>
-          
           <Header></Header>
+
           <LogoBrand></LogoBrand>
+
           <Container>
             <Row>
               <Col md={6}>

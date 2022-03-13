@@ -15,14 +15,7 @@ function Filter() {
 
     const handler = e => {
         e.preventDefault()
-        console.log(e.target.buscador.value); //sevilla
         setCity(e.target.buscador.value)
-
-        // getFetchWithCity(city).then(c => {
-        //     setLatitude(c.coord.lat)
-        //     setLongitude(c.coord.lon)
-        //     console.log(longitude, latitude)
-        // })
     }
     
     return (
