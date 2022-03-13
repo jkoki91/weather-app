@@ -1,0 +1,47 @@
+img, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clothes-mini { 
+    
+    max-width: 166px;
+}
+
+.main-img {
+  
+    max-width: 545px;
+}
+
+.clothes-mini__container {
+    display: flex;
+    margin-left: -1.5rem;
+}
+
+.clothes-mini__container, img {
+    margin-right: 1.4rem;
+    margin-top: .5rem;
+}
+
+.clothes__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+
+}
+
+.button-casual {
+    box-shadow: 5px 5px 8px 1px rgba(85, 85, 85, 0.15);
+    border: 2px solid #CCCCCC;
+}
+
+.button-formal {
+    border: 2px solid #868E96;
+}
+
+.btn:hover {
+    background-color: white;
+    border: 2px solid #CCCCCC;
+}
+

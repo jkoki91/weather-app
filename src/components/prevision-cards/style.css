@@ -1,0 +1,61 @@
+p, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article:hover {
+    cursor: pointer;
+}
+
+.prev-card__container {
+    width: 517px;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    color: #666666;
+    border-top: 1px solid #868E96;
+    padding: 1.6rem;
+
+
+}
+
+
+.prev-card__date {
+    font-size: 16px;
+}
+
+.prev-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.prev-icons {
+    margin: 0;
+}
+
+.prev-card__temp-rain {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+.prev-info {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;    
+}
+
+.prev-card_temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.text-data-icon {
+    font-size: 12px;
+}
