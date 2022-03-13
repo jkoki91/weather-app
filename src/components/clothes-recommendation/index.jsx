@@ -76,8 +76,8 @@ export default function ClothesRecommendation() {
     let num = outfitStyle === 'casual' ? 0 : 1;
     const description = data.daily[0].weather[0].description;
     const isRainning = description.toLowerCase().includes("lluvia");
-    if (temp < 5) return clothes[randomPick(lowTemperatureOutfits[num])];
-    if (temp > 35) return clothes[randomPick(highTemperatureOutfits[num])];
+    if (weatherTemp < 5) return clothes[randomPick(lowTemperatureOutfits[num])];
+    if (weatherTemp > 35) return clothes[randomPick(highTemperatureOutfits[num])];
     if (isRainning) return clothes[randomPick(rainOutfits[num])];
     if (outfitStyle === "casual") return clothes[randomPick(informalOutfits[num])];
     if (outfitStyle === "formal") return clothes[randomPick(formalOutfits[num])];
