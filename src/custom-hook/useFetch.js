@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { CoordsContext } from "../context/coords-context";
-import { apiKey } from "../key/key";
 import { useGeolocation } from "./useGeolocation";
 import { TemperatureContext } from "../context/temperature-context";
+import { apiKey } from "../key/key";
 
 export const useFetchWithCity = (api) => {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
-   
+   console.log(apiKey)
 
     useEffect(() => {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},&limit=2&appid=${apiKey}`)
