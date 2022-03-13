@@ -8,6 +8,7 @@ import { getFetchWithCity, getFetchWithCoords, useFetchWithCity, useFetchWithCoo
 import { useState } from 'react';
 import { apiKey } from '../../key/key';
 import { TemperatureContext } from "../../context/temperature-context";
+import './style.css'
 
 function Filter() {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
@@ -27,11 +28,11 @@ function Filter() {
     
     return (
         <Row xs={1} md={1} className="g-4">
-            <Col md={10} xxl={5}>
+            {/* <Col md={12}> */}
                 <Form onSubmit={handler}>
-                    <Form.Control type="text" placeholder={`Mi ubicación`} name="buscador" />
+                    <Form.Control className="input" type="text" placeholder={`Mi ubicación`} name="buscador" />
                 </Form>
-            </Col>
+            {/* </Col> */}
         </Row>
     )
 }
