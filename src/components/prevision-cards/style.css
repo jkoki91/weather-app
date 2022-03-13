@@ -4,6 +4,10 @@ p, img {
     box-sizing: border-box;
 }
 
+article:hover {
+    cursor: pointer;
+}
+
 .prev-card__container {
     width: 517px;
     display: flex;

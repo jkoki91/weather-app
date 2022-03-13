@@ -33,7 +33,8 @@ function App() {
                 <SwitchDegrees></SwitchDegrees>
                 <Filter></Filter>
                 <CurrentCard></CurrentCard>
-                <PrevisionCardsList></PrevisionCardsList>
+               
+                {/* <PrevisionCardsList></PrevisionCardsList> */}
               </Col>
               <Col md={6}>
                 <ClothesRecommendation></ClothesRecommendation>
