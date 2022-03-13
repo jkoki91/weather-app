@@ -12,6 +12,7 @@ import { CoordsContext } from "./context/coords-context";
 import Header from "./components/header";
 import SwitchDegrees from "./components/switch-degrees";
 import Filter from "./components/filter";
+import { useGeolocation } from "./custom-hook/useGeolocation";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <TemperatureProvider>
         <CoordsContextProvider>
+          
           <Header></Header>
           <LogoBrand></LogoBrand>
   

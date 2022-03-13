@@ -17,10 +17,12 @@ import { TemperatureContext } from "../../context/temperature-context";
 function CurrentCard() {
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
     const [currentTemp, setCurrentTemp, units, setUnits] = useContext(TemperatureContext);
-    
+    useGeolocation();
+
     useEffect(()=>{
+        console.log('getfetchcity', city);
         getFetchWithCity(city).then(c => {
-        
+            
             setLatitude(c.coord.lat)
             setLongitude(c.coord.lon)
             console.log(longitude,latitude)
@@ -28,17 +30,19 @@ function CurrentCard() {
     },[city])
     
     useEffect(()=>{
-        getFetchWithCoords(latitude,longitude,units).then(c=>{
-            console.log(c)
-            setData(c)
-            
-        })
-    },[latitude,longitude,city])
+        console.log(latitude, longitude);
+        if (latitude && longitude) {
+            getFetchWithCoords(latitude, longitude, units).then(c => {
+                console.log(c)
+                setData(c)
+            })
+        }
+    },[latitude, units])
     
     console.log(data);
     return (
         <>
-            {data === null || undefined ? 'cargando' :
+            {(data === null || undefined) ? 'cargando' :
                 <React.Fragment>
                     <Row xs={1} md={2} className="g-4">
                         {/* <Col md={24} xxl={12} > */}
@@ -56,7 +60,7 @@ function CurrentCard() {
                                 </Col>
                                 <Col md={12} xxl={12}>
                                     <Card.Body>
-                                        <Card.Title className="card__title"><h2>{data.timezone}</h2></Card.Title>
+                                        <Card.Title className="card__title"><h2>{city}</h2></Card.Title>
                                         <Container>
                                             <p className="card__description">{data.current.weather[0].description}</p>
                                             <div className="card__info">
