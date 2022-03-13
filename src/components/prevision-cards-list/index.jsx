@@ -13,7 +13,10 @@ export default function PrevisionCardsList() {
     setLatitude,
     longitude,
     setLongitude,
+    counter,
+    setCounter
   ] = useContext(CoordsContext);
+  
 
   const weekDays = {
     0: "Sunday",
@@ -42,11 +45,14 @@ export default function PrevisionCardsList() {
 
   const daily = data.daily;
 
-  const handleCardClick = (i) => {
+  const handleCardClick = (e) => {
     console.log(data);
     console.log(data.daily[0]);
-   
+    
+  
   };
+  
+
 
   const printPrevisionCards = daily.map((day, i) => {
     const timestamp = day.dt * 1000;
@@ -56,9 +62,11 @@ export default function PrevisionCardsList() {
     const month = months[date.getMonth()];
 
     if (i >= 1) {
-     return <PrevisionCards weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity} type={day.weather[0].icon}></PrevisionCards>
+
+        return <PrevisionCards key={i} cardClick={handleCardClick} weekday={weekDays[weekDay]} day={previsionDay} month={month} degrees={Math.round(day.temp.day)} rain={day.humidity} type={day.weather[0].icon}></PrevisionCards>
     }
   });
+console.log(printPrevisionCards);
 
   return (
     <>

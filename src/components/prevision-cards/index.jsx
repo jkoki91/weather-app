@@ -8,7 +8,7 @@ import { TemperatureContext } from "../../context/temperature-context";
 
 
 
-export default function PrevisionCards({weekday, day, month, degrees, rain, type}) {
+export default function PrevisionCards({weekday, day, month, degrees, rain, type, cardClick}) {
   const [currentTemp, setCurrentTemp] = useContext(TemperatureContext)
   console.log('icono', type)
   return (
