@@ -1,4 +1,22 @@
 .input{
     margin-left: 10px;
-    width: 400px;
+    width: 370px;
+    background-color: #F2F2F2;
+    padding-left: 30px;
+    /* position: absolute; */
+    /* position: relative; */
+}
+
+.button__ubication{
+    /* position: absolute; */
+    /* position: relative; */
+    /* position: sticky; */
+    margin-left: 15px;
+    margin-top: 4px;
+    border:none;
+    background-color: none;
+}
+
+.form__button{
+    
 }
