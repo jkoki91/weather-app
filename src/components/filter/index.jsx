@@ -33,7 +33,7 @@ function Filter() {
         <Row xs={1} md={1} className="g-4">
             <Col md={10} xxl={5}>
                 <Form onSubmit={handler}>
-                    <Form.Control type="text" placeholder={` Mi ubicación`} name="buscador" />
+                    <Form.Control type="text" placeholder={`Mi ubicación`} name="buscador" />
                 </Form>
             </Col>
         </Row>

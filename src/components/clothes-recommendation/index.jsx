@@ -17,20 +17,13 @@ function importAll(r) {
 const images = importAll(
   require.context("../../assets/clothes", false, /\.(png|jpe?g|svg)$/)
 );
+console.log(images);
 
 export default function ClothesRecommendation() {
-//   const [
-//     data,
-//     setData,
-//     city,
-//     setCity,
-//     latitude,
-//     setLatitude,
-//     longitude,
-//     setLongitude,
-//   ] = useContext(CoordsContext);
+
   const [outfitStyle, setOufitStyle] = useState("casual");
   const keys = Object.keys(images);
+  console.log(keys);
   const formalOutfits = [];
   const informalOutfits = [];
 
@@ -49,13 +42,12 @@ export default function ClothesRecommendation() {
     console.log(randomIndex);
     return outfitArray[randomIndex]
   }
-
+ 
   const selectOutfitByStyle = () => {
       if(outfitStyle === 'casual') return images[randomPick(informalOutfits)]
       else return images[randomPick(formalOutfits)]
   }
 
-//   const temp = data.current.temp;
 
   console.log(informalOutfits);
   return (
