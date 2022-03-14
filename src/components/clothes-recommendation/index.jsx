@@ -79,8 +79,8 @@ export default function ClothesRecommendation() {
     if (weatherTemp < 5) return clothes[randomPick(lowTemperatureOutfits[num])];
     if (weatherTemp > 35) return clothes[randomPick(highTemperatureOutfits[num])];
     if (isRainning) return clothes[randomPick(rainOutfits[num])];
-    if (outfitStyle === "casual") return clothes[randomPick(informalOutfits[num])];
-    if (outfitStyle === "formal") return clothes[randomPick(formalOutfits[num])];
+    if (outfitStyle === "casual") return clothes[randomPick(informalOutfits)];
+    if (outfitStyle === "formal") return clothes[randomPick(formalOutfits)];
   };
 
   console.log(highTemperatureOutfits);
