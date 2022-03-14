@@ -11,7 +11,7 @@ import {
     useFetchWithCoords,
 } from "../../custom-hook/useFetch";
 import { useState } from "react";
-import { apiKey } from "../../key/key";
+import { apiKey } from "../../key.js/key";
 import { TemperatureContext } from "../../context/temperature-context";
 import "./style.css";
 
@@ -32,14 +32,7 @@ function Filter() {
 
     const handler = (e) => {
         e.preventDefault();
-        console.log(e.target.buscador.value); //sevilla
         setCity(e.target.buscador.value);
-
-        // getFetchWithCity(city).then(c => {
-        //     setLatitude(c.coord.lat)
-        //     setLongitude(c.coord.lon)
-        //     console.log(longitude, latitude)
-        // })
     };
 
     const handleClickButton = () => {

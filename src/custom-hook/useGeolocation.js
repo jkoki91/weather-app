@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { CoordsContext } from "../context/coords-context";
 
 export const useGeolocation = () => {
-    // let [latitude, setLatitude] = useState('');
-    // let [longitude, setLongitude] = useState('');
     const [data, setData, city, setCity, latitude, setLatitude, longitude, setLongitude] = useContext(CoordsContext);
   
     useEffect(() => {
@@ -14,6 +12,4 @@ export const useGeolocation = () => {
           };
         navigator.geolocation.getCurrentPosition(success)
     }, [])
-    
-    
 }
