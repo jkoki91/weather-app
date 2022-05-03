@@ -12,7 +12,7 @@ export default function Header() {
                 <Nav className="me-auto">
                     <Nav.Link>Inicio</Nav.Link>
                     <Nav.Link>Nueva prenda</Nav.Link>
-                    <Nav.Link>Mi amario</Nav.Link>
+                    <Nav.Link>Mi armario</Nav.Link>
                     
                 </Nav>
             </Container>
