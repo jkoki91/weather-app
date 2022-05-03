@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weather-app/static/css/main.25762df0.css",
-    "main.js": "/weather-app/static/js/main.c3f3d038.js",
+    "main.js": "/weather-app/static/js/main.eb618682.js",
     "static/js/787.d9312eb8.chunk.js": "/weather-app/static/js/787.d9312eb8.chunk.js",
     "static/media/conjuntos_2-nublado-informal_7-20.png": "/weather-app/static/media/conjuntos_2-nublado-informal_7-20.eb41c7cd9f07ff6b19be.png",
     "static/media/conjuntos_2-nublado-lluvia-informal_10-10.png": "/weather-app/static/media/conjuntos_2-nublado-lluvia-informal_10-10.fba9ef1326e73144ef22.png",
@@ -69,11 +69,11 @@
     "static/media/fluent_weather-cloudy-20-filled.svg": "/weather-app/static/media/fluent_weather-cloudy-20-filled.6c87a08aef59846c63d7ff2829d3b67f.svg",
     "static/media/vector.svg": "/weather-app/static/media/vector.cf8ab6cd4647ee61c5dddd3cd590f1ad.svg",
     "main.25762df0.css.map": "/weather-app/static/css/main.25762df0.css.map",
-    "main.c3f3d038.js.map": "/weather-app/static/js/main.c3f3d038.js.map",
+    "main.eb618682.js.map": "/weather-app/static/js/main.eb618682.js.map",
     "787.d9312eb8.chunk.js.map": "/weather-app/static/js/787.d9312eb8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25762df0.css",
-    "static/js/main.c3f3d038.js"
+    "static/js/main.eb618682.js"
   ]
 }
